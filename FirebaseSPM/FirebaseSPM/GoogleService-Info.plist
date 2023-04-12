@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>651869522575-rbs1c9d59h8ahgq0623pijmceckfohis.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.651869522575-rbs1c9d59h8ahgq0623pijmceckfohis</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBKPaosuZOVIIsujDUiTOn5b4shzPDp_Cs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>651869522575</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>Naysa-Alex.FirebaseSPM</string>
+	<key>PROJECT_ID</key>
+	<string>fir-spm-1a891</string>
+	<key>STORAGE_BUCKET</key>
+	<string>fir-spm-1a891.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:651869522575:ios:8ed9e9a4f0aa3a579a3efa</string>
+</dict>
+</plist>
