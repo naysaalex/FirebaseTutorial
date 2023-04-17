@@ -10,12 +10,40 @@ import Firebase
 
 struct ContentView: View {
     @ObservedObject var model = ViewModels()
+    @State var id = ""
+    @State var category = ""
+    @State var time = ""
+    
     var body: some View {
-        List(model.list){
-            item in
-            
-            Text(item.time)
+        VStack{
+            List(model.list){
+                item in
+                
+                Text(item.time)
+            }
         }
+        
+        Divider()
+        
+        VStack(spacing: 5){
+            TextField("ID: ", text: $id)
+            TextField("category: ", text: $category)
+            TextField("time: ", text: $time)
+            
+            Button(action: {
+                //call add data
+                model.addData(id: Int(id) ?? 0, category: category, Time: time)
+                
+                //remove text fields
+                id = ""
+                category = ""
+                time = ""
+                
+            }, label: {
+                Text("Add Lesson Details")
+            })
+        }
+        .padding()
     }
     init(){
         model.getData()

@@ -11,6 +11,39 @@ import Firebase
 class ViewModels: ObservableObject{
     @Published var list = [Lesson]()
     //write a function to fetch the data from db
+    
+    func deleteData(lessonToDelete: Lesson){
+        //reference the db
+        let db = Firestore.firestore()
+        
+        //specify the doc you want to delete
+        db.collection("lesson").document().delete{ error in
+            if error == nil {
+                self.list.removeAll(){
+                    return Lesson.docid = lessonToDelete.docid
+                }
+            } else {
+                //record the error if you wish
+            }
+        }
+    }
+    
+    func addData(id: Int, category: String, Time: String){
+        //get reference to the database
+        let db = Firestore.firestore()
+        
+        //add a document to the collection
+        db.collection("lesson").addDocument(data: ["id":id, "category": category, "time": Time]){
+            error in
+            if error == nil {
+                self.getData()
+                
+            } else{
+                //throw error if you want to record it
+            }
+        }
+    }
+    
     func getData(){
         //create database
         let db = Firestore.firestore()
