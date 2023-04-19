@@ -12,12 +12,17 @@ class ViewModels: ObservableObject{
     @Published var list = [Lesson]()
     //write a function to fetch the data from db
     
+    func updateData(lessonToDelete: Lesson){
+        let db = Firestore.firestore()
+        db.collection("lesson").document(lessonToDelete.docid).setData(["id":4], merge: true)
+    }
+    
     func deleteData(lessonToDelete: Lesson){
         //reference the db
         let db = Firestore.firestore()
         
         //specify the doc you want to delete
-        db.collection("lesson").document().delete { error in
+        db.collection("lesson").document(lessonToDelete.docid).delete() { error in
             if error == nil{
                 self.list.removeAll { lesson in
                     return lesson.docid == lessonToDelete.docid

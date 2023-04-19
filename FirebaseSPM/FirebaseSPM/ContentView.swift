@@ -26,13 +26,12 @@ struct ContentView: View {
                     
                     Button(action: {
                         //call add data
-                        model.deleteData(lessonToDelete: Lesson(docid: item.docid, id: item.id, category: item.category, time: item.time))
+                        model.deleteData(lessonToDelete: item)
                         
                         //remove text fields
                         
-                    }, label: {
-                        Text("Delete")
-                    })
+                    }, label: {Image(systemName: "minus.square.fill")
+                    }).buttonStyle(BorderedButtonStyle())
                 }
             }
         }
