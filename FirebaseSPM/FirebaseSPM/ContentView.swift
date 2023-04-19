@@ -19,7 +19,21 @@ struct ContentView: View {
             List(model.list){
                 item in
                 
-                Text(item.time)
+                HStack{
+                    Text(item.time)
+                    
+                    Spacer()
+                    
+                    Button(action: {
+                        //call add data
+                        model.deleteData(lessonToDelete: Lesson(docid: item.docid, id: item.id, category: item.category, time: item.time))
+                        
+                        //remove text fields
+                        
+                    }, label: {
+                        Text("Delete")
+                    })
+                }
             }
         }
         

@@ -17,10 +17,10 @@ class ViewModels: ObservableObject{
         let db = Firestore.firestore()
         
         //specify the doc you want to delete
-        db.collection("lesson").document().delete{ error in
-            if error == nil {
-                self.list.removeAll(){
-                    return Lesson.docid = lessonToDelete.docid
+        db.collection("lesson").document().delete { error in
+            if error == nil{
+                self.list.removeAll { lesson in
+                    return lesson.docid == lessonToDelete.docid
                 }
             } else {
                 //record the error if you wish
